@@ -192,4 +192,64 @@
 
 </body>
 </html>
-     
+             <p class="tchau-texto">Foi isso, se gostarem vou trazer esse tema mais vezes, tchauu! 💕</p>
+        
+        <!-- SEÇÃO DO BOTÃO DE LIKE -->
+        <div style="text-align: center; margin-top: 25px;">
+            <button id="like-btn" style="background-color: #ff9ebb; color: white; border: none; padding: 12px 24px; font-family: 'Fredoka', sans-serif; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 158, 187, 0.4); transition: transform 0.2s, background-color 0.2s;">
+                ❤️ Curtir (<span id="like-count">0</span>)
+            </button>
+        </div>
+
+    </main>
+</div>
+
+<!-- SCRIPT PARA FAZER O BOTÃO FUNCIONAR -->
+<script>
+    const likeBtn = document.getElementById('like-btn');
+    const likeCountSpan = document.getElementById('like-count');
+
+    // Recupera a quantidade de likes salva ou começa com 0
+    let likes = parseInt(localStorage.getItem('blogLikes')) || 0;
+    likeCountSpan.textContent = likes;
+
+    // Verifica se este usuário já deu o like antes
+    let jaCurtiu = localStorage.getItem('usuarioCurtiu') === 'true';
+    if (jaCurtiu) {
+        likeBtn.style.backgroundColor = '#bfa3ff'; // Muda para roxo se já curtiu
+    }
+
+    likeBtn.addEventListener('click', () => {
+        if (!jaCurtiu) {
+            likes++;
+            localStorage.setItem('blogLikes', likes);
+            localStorage.setItem('usuarioCurtiu', 'true');
+            jaCurtiu = true;
+            
+            likeCountSpan.textContent = likes;
+            likeBtn.style.backgroundColor = '#bfa3ff'; // Muda a cor para roxo
+            likeBtn.style.transform = 'scale(1.1)';
+            setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
+        } else {
+            // Se clicar de novo, remove o like
+            likes--;
+            localStorage.setItem('blogLikes', likes);
+            localStorage.setItem('usuarioCurtiu', 'false');
+            jaCurtiu = false;
+
+            likeCountSpan.textContent = likes;
+            likeBtn.style.backgroundColor = '#ff9ebb'; // Volta para o rosa original
+        }
+    });
+
+    // Efeito visual simples ao passar o mouse
+    likeBtn.addEventListener('mouseover', () => {
+        likeBtn.style.transform = 'scale(1.05)';
+    });
+    likeBtn.addEventListener('mouseout', () => {
+        likeBtn.style.transform = 'scale(1)';
+    });
+</script>
+
+</body>
+</html>
