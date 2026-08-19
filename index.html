@@ -11,34 +11,22 @@
     
     <style>
         /* Configurações Gerais do Fundo */
-        html, body {
-            min-height: 100vh;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
             background-color: #fcf0f5; /* Rosa bem clarinho */
             font-family: 'Quicksand', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            padding: 15px; /* Margem interna para o container não grudar na tela em celulares */
-            box-sizing: border-box;
+            margin: 0;
+            padding: 20px;
         }
 
         /* Container Principal do Blog */
         .blog-container {
-            width: 100%;
-            max-width: 700px; /* Limita o tamanho em telas grandes */
-            margin: 15px auto;
+            max-width: 700px;
+            margin: 30px auto;
             background-color: #ffffff;
             border-radius: 24px;
             box-shadow: 0 8px 24px rgba(240, 178, 201, 0.4); /* Sombra rosa suave */
             overflow: hidden;
             border: 3px solid #ffdeeb;
-            box-sizing: border-box;
         }
 
         /* Cabeçalho */
@@ -46,13 +34,13 @@
             background-color: #e3faf7; /* Verde menta pastel */
             color: #529b92;
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 25px;
             border-bottom: 3px dashed #bbf2ec;
         }
 
         header h1 {
             font-family: 'Fredoka', sans-serif;
-            font-size: 1.8rem; /* Tamanho adaptável */
+            font-size: 2rem;
             margin-top: 0;
             margin-bottom: 15px;
             color: #40857c;
@@ -60,7 +48,7 @@
         }
 
         header p {
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
             margin: 0;
             color: #5c8f88;
@@ -68,14 +56,14 @@
 
         /* Corpo do Blog */
         main {
-            padding: 25px 20px;
+            padding: 35px 30px;
             background-color: #ffffff;
         }
 
         main h2 {
             font-family: 'Fredoka', sans-serif;
             color: #ff9ebb; /* Rosa destaque */
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-top: 0;
             margin-bottom: 25px;
             display: inline-block;
@@ -117,7 +105,7 @@
         /* Texto dos Termos */
         .termo-container p {
             margin: 0;
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 1.5;
             color: #555555;
         }
@@ -125,7 +113,7 @@
         .termo-container strong {
             color: #d16b88; /* Cor de destaque para a palavra-chave */
             font-family: 'Fredoka', sans-serif;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
         }
 
         /* Texto Final de Despedida */
@@ -133,33 +121,9 @@
             text-align: center;
             font-family: 'Fredoka', sans-serif;
             color: #bfa3ff; /* Roxo pastel */
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 35px;
             margin-bottom: 0;
-        }
-
-        /* 📱 REGRAS PARA CELULARES PEQUENOS (Responsividade) */
-        @media (max-width: 480px) {
-            body {
-                padding: 10px;
-            }
-            .blog-container {
-                margin: 5px auto;
-                border-radius: 16px;
-            }
-            header h1 {
-                font-size: 1.5rem;
-            }
-            .termo-container {
-                flex-direction: column; /* Coloca a imagem acima do texto no celular */
-                text-align: center;
-                gap: 12px;
-                padding: 18px 12px;
-            }
-            img {
-                width: 90px;
-                height: 90px;
-            }
         }
     </style>
 </head>
@@ -204,9 +168,8 @@
                 <p><strong>Unnie:</strong> referente a uma amiga próxima e mais velha, o termo significa irmã mais velha e só pode ser usado de mulheres para mulheres;</p>
             </div>
 
-            <!-- CORRIGIDO: Tag img fechava errado com jpng" -->
             <div class="termo-container">
-                <img src="jiwoong icon.png" alt="Hyung">
+                <img src="jiwoong icon.jpng"Hyung">
                 <p><strong>Hyung:</strong> usado para se referir a algum amigo mais velho muito próximo, significa irmão mais velho e só pode ser usado entre homens;</p>
             </div>
 
@@ -221,44 +184,70 @@
             </div>
 
             <p class="tchau-texto">Foi isso, se gostarem vou trazer esse tema mais vezes, tchauu! 💕</p>
-        
-            <!-- SEÇÃO DO BOTÃO DE LIKE -->
-            <div style="text-align: center; margin-top: 25px;">
-                <button id="like-btn" style="background-color: #ff9ebb; color: white; border: none; padding: 12px 24px; font-family: 'Fredoka', sans-serif; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 158, 187, 0.4); transition: transform 0.2s, background-color 0.2s;">
-                    ❤️ Curtir (<span id="like-count">0</span>)
-                </button>
-            </div>
-
         </main>
     </div>
 
-    <!-- SCRIPT PARA FAZER O BOTÃO FUNCIONAR -->
-    <script>
-        const likeBtn = document.getElementById('like-btn');
-        const likeCountSpan = document.getElementById('like-count');
+</body>
+</html>
+             <p class="tchau-texto">Foi isso, se gostarem vou trazer esse tema mais vezes, tchauu! 💕</p>
+        
+        <!-- SEÇÃO DO BOTÃO DE LIKE -->
+        <div style="text-align: center; margin-top: 25px;">
+            <button id="like-btn" style="background-color: #ff9ebb; color: white; border: none; padding: 12px 24px; font-family: 'Fredoka', sans-serif; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 158, 187, 0.4); transition: transform 0.2s, background-color 0.2s;">
+                ❤️ Curtir (<span id="like-count">0</span>)
+            </button>
+        </div>
 
-        let likes = parseInt(localStorage.getItem('blogLikes')) || 0;
-        likeCountSpan.textContent = likes;
+    </main>
+</div>
 
-        let jaCurtiu = localStorage.getItem('usuarioCurtiu') === 'true';
-        if (jaCurtiu) {
-            likeBtn.style.backgroundColor = '#bfa3ff';
+<!-- SCRIPT PARA FAZER O BOTÃO FUNCIONAR -->
+<script>
+    const likeBtn = document.getElementById('like-btn');
+    const likeCountSpan = document.getElementById('like-count');
+
+    // Recupera a quantidade de likes salva ou começa com 0
+    let likes = parseInt(localStorage.getItem('blogLikes')) || 0;
+    likeCountSpan.textContent = likes;
+
+    // Verifica se este usuário já deu o like antes
+    let jaCurtiu = localStorage.getItem('usuarioCurtiu') === 'true';
+    if (jaCurtiu) {
+        likeBtn.style.backgroundColor = '#bfa3ff'; // Muda para roxo se já curtiu
+    }
+
+    likeBtn.addEventListener('click', () => {
+        if (!jaCurtiu) {
+            likes++;
+            localStorage.setItem('blogLikes', likes);
+            localStorage.setItem('usuarioCurtiu', 'true');
+            jaCurtiu = true;
+            
+            likeCountSpan.textContent = likes;
+            likeBtn.style.backgroundColor = '#bfa3ff'; // Muda a cor para roxo
+            likeBtn.style.transform = 'scale(1.1)';
+            setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
+        } else {
+            // Se clicar de novo, remove o like
+            likes--;
+            localStorage.setItem('blogLikes', likes);
+            localStorage.setItem('usuarioCurtiu', 'false');
+            jaCurtiu = false;
+
+            likeCountSpan.textContent = likes;
+            likeBtn.style.backgroundColor = '#ff9ebb'; // Volta para o rosa original
         }
+    });
 
-        likeBtn.addEventListener('click', () => {
-            if (!jaCurtiu) {
-                likes++;
-                localStorage.setItem('blogLikes', likes);
-                localStorage.setItem('usuarioCurtiu', 'true');
-                jaCurtiu = true;
-                
-                likeCountSpan.textContent = likes;
-                likeBtn.style.backgroundColor = '#bfa3ff';
-                likeBtn.style.transform = 'scale(1.1)';
-                setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
-            } else {
-                likes--;
-                localStorage.setItem('blogLikes', likes);
-                localStorage.setItem('usuarioCurtiu', 'false');
-                jaCurtiu = false;
+    // Efeito visual simples ao passar o mouse
+    likeBtn.addEventListener('mouseover', () => {
+        likeBtn.style.transform = 'scale(1.05)';
+    });
+    likeBtn.addEventListener('mouseout', () => {
+        likeBtn.style.transform = 'scale(1)';
+    });
+</script>
+
+</body>
+</html>
 
