@@ -7,55 +7,9 @@
     <!-- Importação de fontes fofas do Google Fonts -->
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     
     <style>
-        /* Variáveis de Cores para Transição Suave */
-        :root {
-            --bg-body: #fcf0f5; /* Rosa bem clarinho */
-            --bg-container: #ffffff;
-            --bg-header: #e3faf7; /* Verde menta pastel */
-            --color-header-title: #40857c;
-            --color-header-text: #5c8f88;
-            --border-header: #bbf2ec;
-            --bg-main: #ffffff;
-            --color-title: #ff9ebb; /* Rosa destaque */
-            --border-title: #ffe3ec;
-            --bg-termo: #fff6f9;
-            --bg-termo-hover: #f5f0ff;
-            --border-termo: #ffe3ec;
-            --border-termo-hover: #e1d4ff;
-            --color-text: #555555;
-            --color-strong: #d16b88;
-            --color-tchau: #bfa3ff;
-            --border-container: #ffdeeb;
-            --shadow-container: 0 12px 40px rgba(240, 178, 201, 0.45);
-            --shadow-termo: 0 6px 16px rgba(255, 227, 236, 0.6);
-        }
-
-        /* Cores do Modo Escuro (Mantendo a Estética Fofa/Pastel) */
-        [data-theme="dark"] {
-            --bg-body: #231e25; /* Roxo escuro confortável */
-            --bg-container: #2d2631; /* Container ligeiramente mais claro */
-            --bg-header: #243534; /* Verde menta escuro e suave */
-            --color-header-title: #a2e0d7;
-            --color-header-text: #8bb3ae;
-            --border-header: #354e4b;
-            --bg-main: #2d2631;
-            --color-title: #ffb5cc; /* Rosa claro pastel para contraste */
-            --border-title: #423545;
-            --bg-termo: #342b38; /* Fundo do item mais escurinho */
-            --bg-termo-hover: #3a2e41;
-            --border-termo: #423545;
-            --border-termo-hover: #5d4666;
-            --color-text: #ddcfe2; /* Texto claro e suave, sem ser branco puro */
-            --color-strong: #ff9ebb;
-            --color-tchau: #d2c2fd;
-            --border-container: #3d3142;
-            --shadow-container: 0 12px 40px rgba(15, 10, 18, 0.6);
-            --shadow-termo: 0 6px 16px rgba(0, 0, 0, 0.2);
-        }
-
         /* Configurações Gerais do Fundo */
         html, body {
             min-height: 100vh;
@@ -64,98 +18,69 @@
         }
 
         body {
-            background-color: var(--bg-body);
+            background-color: #fcf0f5; /* Rosa bem clarinho */
             font-family: 'Quicksand', sans-serif;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
-            padding: 15px;
+            padding: 15px; /* Margem interna para o container não grudar na tela em celulares */
             box-sizing: border-box;
-            /* Efeito de transição suave em todas as mudanças de cores */
-            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Botão Alternador de Tema (Fixo no topo direito) */
-        .theme-toggle-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: var(--bg-container);
-            border: 2px solid var(--border-container);
-            color: var(--color-strong);
-            font-family: 'Fredoka', sans-serif;
-            padding: 10px 16px;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: var(--shadow-termo);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-        .theme-toggle-btn:hover {
-            transform: scale(1.05);
         }
 
         /* Container Principal do Blog */
         .blog-container {
             width: 100%;
-            max-width: 700px;
-            margin: 40px auto 15px auto;
-            background-color: var(--bg-container);
+            max-width: 700px; /* Limita o tamanho em telas grandes */
+            margin: 15px auto;
+            background-color: #ffffff;
             border-radius: 24px;
-            box-shadow: var(--shadow-container);
+            box-shadow: 0 8px 24px rgba(240, 178, 201, 0.4); /* Sombra rosa suave */
             overflow: hidden;
-            border: 3px solid var(--border-container);
+            border: 3px solid #ffdeeb;
             box-sizing: border-box;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         /* Cabeçalho */
         header {
-            background-color: var(--bg-header);
-            color: var(--color-header-text);
+            background-color: #e3faf7; /* Verde menta pastel */
+            color: #529b92;
             text-align: center;
-            padding: 35px 25px;
-            border-bottom: 3px dashed var(--border-header);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 30px 20px;
+            border-bottom: 3px dashed #bbf2ec;
         }
 
         header h1 {
             font-family: 'Fredoka', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.8rem; /* Tamanho adaptável */
             margin-top: 0;
             margin-bottom: 15px;
-            color: var(--color-header-title);
-            text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
-            transition: color 0.5s ease;
+            color: #40857c;
+            text-shadow: 1px 1px 0px #fff;
         }
 
         header p {
             font-size: 1rem;
             line-height: 1.6;
             margin: 0;
-            color: var(--color-header-text);
-            transition: color 0.5s ease;
+            color: #5c8f88;
         }
 
         /* Corpo do Blog */
         main {
-            padding: 35px 30px;
-            background-color: var(--bg-main);
-            transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 25px 20px;
+            background-color: #ffffff;
         }
 
         main h2 {
             font-family: 'Fredoka', sans-serif;
-            color: var(--color-title);
+            color: #ff9ebb; /* Rosa destaque */
             font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 25px;
             display: inline-block;
-            border-bottom: 3px solid var(--border-title);
+            border-bottom: 3px solid #ffe3ec;
             padding-bottom: 5px;
-            transition: all 0.5s ease;
         }
 
         /* Container de cada Termo */
@@ -164,19 +89,18 @@
             align-items: center;
             gap: 20px;
             margin-bottom: 20px;
-            background-color: var(--bg-termo);
+            background-color: #fff6f9; /* Fundo lilás/rosa sutil para cada item */
             padding: 15px;
             border-radius: 20px;
-            border: 1px solid var(--border-termo);
-            box-shadow: var(--shadow-termo);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+            border: 1px solid #ffe3ec;
+            transition: transform 0.2s ease;
         }
 
         /* Efeito ao passar o mouse por cima do termo */
         .termo-container:hover {
             transform: translateY(-3px);
-            background-color: var(--bg-termo-hover);
-            border-color: var(--border-termo-hover);
+            background-color: #f5f0ff; /* Muda levemente para um tom lavanda */
+            border-color: #e1d4ff;
         }
 
         /* Estilo das Imagens */
@@ -184,11 +108,10 @@
             width: 85px;
             height: 85px;
             object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid var(--bg-container);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            flex-shrink: 0;
-            transition: border-color 0.5s ease;
+            border-radius: 50%; /* Foto perfeitamente redonda */
+            border: 4px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Sombra leve na foto */
+            flex-shrink: 0; /* Impede a imagem de amassar em telas menores */
         }
 
         /* Texto dos Termos */
@@ -196,26 +119,23 @@
             margin: 0;
             font-size: 1rem;
             line-height: 1.5;
-            color: var(--color-text);
-            transition: color 0.5s ease;
+            color: #555555;
         }
 
         .termo-container strong {
-            color: var(--color-strong);
+            color: #d16b88; /* Cor de destaque para a palavra-chave */
             font-family: 'Fredoka', sans-serif;
             font-size: 1.1rem;
-            transition: color 0.5s ease;
         }
 
         /* Texto Final de Despedida */
         .tchau-texto {
             text-align: center;
             font-family: 'Fredoka', sans-serif;
-            color: var(--color-tchau);
+            color: #bfa3ff; /* Roxo pastel */
             font-size: 1.2rem;
             margin-top: 35px;
             margin-bottom: 0;
-            transition: color 0.5s ease;
         }
 
         /* 📱 REGRAS PARA CELULARES PEQUENOS (Responsividade) */
@@ -223,22 +143,15 @@
             body {
                 padding: 10px;
             }
-            .theme-toggle-btn {
-                position: absolute;
-                top: 10px;
-                right: 10px;
-                padding: 6px 12px;
-                font-size: 0.8rem;
-            }
             .blog-container {
-                margin: 45px auto 5px auto;
+                margin: 5px auto;
                 border-radius: 16px;
             }
             header h1 {
                 font-size: 1.5rem;
             }
             .termo-container {
-                flex-direction: column;
+                flex-direction: column; /* Coloca a imagem acima do texto no celular */
                 text-align: center;
                 gap: 12px;
                 padding: 18px 12px;
@@ -252,9 +165,6 @@
 </head>
 <body>
 
-    <!-- Botão de Alternar Modo Claro/Escuro -->
-    <button class="theme-toggle-btn" id="theme-toggle">✨ Modo Escuro</button>
-
     <div class="blog-container">
         <header>
             <h1>Bias, utted, maknae, o que é tudo isso?! 🌸</h1>
@@ -264,19 +174,91 @@
         <main>
             <h2>Aqui estão:</h2>
 
-            <!-- Termo 1 -->
             <div class="termo-container">
-                <img src="bias.jpg" alt="Bias">
+                <img src="♥︎.jpg" alt="Bias">
                 <p><strong>Bias:</strong> o seu membro predileto de cada grupo (dizem as más línguas que só se pode ter um);</p>
             </div>
 
-            <!-- Termo 2 -->
             <div class="termo-container">
-                <img src="utt.jpg" alt="Utt">
+                <img src="stray kids changbin (1).jpg" alt="Utt">
                 <p><strong>Utt:</strong> o seu idol favorito de todos os idols que existem;</p>
             </div>
 
-            <!-- Termo 3 -->
             <div class="termo-container">
                 <img src="Soyeon.jpg" alt="Ace">
                 <p><strong>Ace:</strong> um idol que é o melhor em todas as categorias (dança, vocal, rap…);</p>
+            </div>
+
+            <div class="termo-container">
+                <img src="transferir (1).jpg" alt="Face">
+                <p><strong>Face:</strong> o “rosto” do grupo, ou seja, o mais conhecido ou popular;</p>
+            </div>
+
+            <div class="termo-container">
+                <img src="yujin.png" alt="Maknae">
+                <p><strong>Maknae:</strong> o membro mais novo de cada grupo, o caçula;</p>
+            </div>
+
+            <div class="termo-container">
+                <img src="nayeon.jpg" alt="Unnie">
+                <p><strong>Unnie:</strong> referente a uma amiga próxima e mais velha, o termo significa irmã mais velha e só pode ser usado de mulheres para mulheres;</p>
+            </div>
+
+            <!-- CORRIGIDO: Tag img fechava errado com jpng" -->
+            <div class="termo-container">
+                <img src="jiwoong icon.png" alt="Hyung">
+                <p><strong>Hyung:</strong> usado para se referir a algum amigo mais velho muito próximo, significa irmão mais velho e só pode ser usado entre homens;</p>
+            </div>
+
+            <div class="termo-container">
+                <img src="transferir (2).jpg" alt="Nuna">
+                <p><strong>Nuna:</strong> é um jeito de homens se referirem a amigas mais velhas, o termo significa irmã mais velha e só pode ser usado por homens;</p>
+            </div>
+
+            <div class="termo-container">
+                  <img src="transferir (3).jpg" alt="Oppa">
+                <p><strong>Oppa:</strong> o mais conhecido, é como mulheres se referirem a amigos mais velhos, o termo significa irmão mais velho e só pode ser usado por mulheres;</p>
+            </div>
+
+            <p class="tchau-texto">Foi isso, se gostarem vou trazer esse tema mais vezes, tchauu! 💕</p>
+        
+            <!-- SEÇÃO DO BOTÃO DE LIKE -->
+            <div style="text-align: center; margin-top: 25px;">
+                <button id="like-btn" style="background-color: #ff9ebb; color: white; border: none; padding: 12px 24px; font-family: 'Fredoka', sans-serif; font-size: 1.1rem; border-radius: 50px; cursor: pointer; box-shadow: 0 4px 10px rgba(255, 158, 187, 0.4); transition: transform 0.2s, background-color 0.2s;">
+                    ❤️ Curtir (<span id="like-count">0</span>)
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- SCRIPT PARA FAZER O BOTÃO FUNCIONAR -->
+    <script>
+        const likeBtn = document.getElementById('like-btn');
+        const likeCountSpan = document.getElementById('like-count');
+
+        let likes = parseInt(localStorage.getItem('blogLikes')) || 0;
+        likeCountSpan.textContent = likes;
+
+        let jaCurtiu = localStorage.getItem('usuarioCurtiu') === 'true';
+        if (jaCurtiu) {
+            likeBtn.style.backgroundColor = '#bfa3ff';
+        }
+
+        likeBtn.addEventListener('click', () => {
+            if (!jaCurtiu) {
+                likes++;
+                localStorage.setItem('blogLikes', likes);
+                localStorage.setItem('usuarioCurtiu', 'true');
+                jaCurtiu = true;
+                
+                likeCountSpan.textContent = likes;
+                likeBtn.style.backgroundColor = '#bfa3ff';
+                likeBtn.style.transform = 'scale(1.1)';
+                setTimeout(() => likeBtn.style.transform = 'scale(1)', 200);
+            } else {
+                likes--;
+                localStorage.setItem('blogLikes', likes);
+                localStorage.setItem('usuarioCurtiu', 'false');
+                jaCurtiu = false;
+
